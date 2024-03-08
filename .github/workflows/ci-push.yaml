@@ -1,8 +1,6 @@
-name: ci-nodejs-workflow
-on: 
-  push:
-    branches:
-      - develop
+name: ci-nodejs-workflow-push
+on: [push]
+
 jobs:
   check-application:
     runs-on: ubuntu-latest
@@ -21,9 +19,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      - name: Build application
-        run: npm run build
 
       - name: Run application
         run: npm start
